@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Total Bill</title>
+  </head>
+  <body>
+    <h1>Total Bill</h1>
+    <script>
+      let submit = () => {
+        let productPrice = parseFloat(document.getElementById("price").value);
+        let taxRate = parseFloat(document.getElementById("tax").value);
+        let shipCharges = parseFloat(document.getElementById("charges").value);
+        // console.log(typeof productPrice);
+        curr(productPrice)(taxRate)(shipCharges);
+        function curr(productPrice) {
+            return (taxRate)=>{
+                return (shipCharges)=>{
+
+        if (true) {
+            taxRate = (taxRate / 100) * productPrice;
+        }
+        let total = productPrice + taxRate + shipCharges;
+        Number(total);
+        console.log('product price is :', productPrice , 'Rupees');
+        console.log('Tax is : ',taxRate,'Rupees');
+        console.log('Shipping Charges is :', shipCharges,'Rupees');
+        console.log('Total is :',total,'Rupees');
+      }
+    }
+}
+};
+
+    </script>
+    <input type="tel" id="price" placeholder="Enter product price" />
+    <input type="tel" id="tax" placeholder="Enter tax rate " />
+    <input type="tel" id="charges" placeholder="Enter shipping charges" />
+    <button onclick="submit()">Submit</button>
+  </body>
+</html>
